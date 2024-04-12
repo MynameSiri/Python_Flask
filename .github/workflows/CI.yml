@@ -17,7 +17,7 @@ jobs:
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: siri098/githubdemo
+        image: siri098/python_flask_docker
         tags: v1, latest
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
@@ -30,7 +30,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           
     - name: Start container
-      run: docker run  -p 5001:5001 -d siri098/githubdemo:latest
+      run: docker run  -p 5001:5001 -d siri098/python_flask_docker:latest
       
     - name:  check container status
       run: docker container ps -a
