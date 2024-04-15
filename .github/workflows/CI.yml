@@ -34,7 +34,7 @@ jobs:
       
     - name:  check container status
       run: docker container ps -a
-    #AZ Login  
+    #AZure Login  
     - name: 'Az CLI login'
       uses: azure/login@v1
       with:
